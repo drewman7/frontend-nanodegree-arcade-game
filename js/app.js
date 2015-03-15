@@ -37,7 +37,7 @@ Enemy.prototype.update = function (dt) {
     if (this.x > ctx.canvas.width) {
         this.x = -101;
     } else {
-        this.x = this.x + 4*this.dt;
+        this.x = this.x + 4 * this.dt;
     };
 
     /**
@@ -68,7 +68,7 @@ Enemy.prototype.render = function() {
  * This function sets up the player object and initializes the variables
  * in the object for each instance.  These are the heros of the game.
  */
-var player = function() {
+var Player = function() {
     /**
      * The sprite used for the hero.  The sprite is setup as an array
      * to allow for the player of the game to change the hero sprite.
@@ -98,14 +98,14 @@ var player = function() {
  * in engine.js.
  * @param {number} dt, a time delta between ticks
  */
-player.prototype.update = function(dt) {
+Player.prototype.update = function(dt) {
 };
 
 /**
  * Function draws the player on the screen utilizing the drawImage
  * function.  Called by renderEntities (engine.js).
  */
-player.prototype.render = function() {
+Player.prototype.render = function() {
     /**
      * drawImage function renders the sprite on the canvas based on the
      * parameters provided.
@@ -144,7 +144,7 @@ player.prototype.render = function() {
  * @param {string} keyStroke This is the key stroke that was set in the 
  *     document.addEventListener function.
  */
-player.prototype.handleInput = function(keyStroke) {
+Player.prototype.handleInput = function(keyStroke) {
     /** If statement checks if the left arrow key was hit */
    if (keyStroke === 'left') {
         /**
@@ -152,7 +152,7 @@ player.prototype.handleInput = function(keyStroke) {
          * left side of the game canvas.  If not, allows the player to move.
          */
         if (this.x - 101 >= 0) {
-            this.x = this.x-101;            // x coordinate is decremented
+            this.x = this.x - 101;            // x coordinate is decremented
         };
     };
     /** If statement checks if the right arrow key was hit */
@@ -162,7 +162,7 @@ player.prototype.handleInput = function(keyStroke) {
          * right side of the game canvas.  If not, allows the player to move.
          */
         if (this.x + 101 < ctx.canvas.width) {
-            this.x = this.x+101;            // x coordinate is incremented
+            this.x = this.x + 101;            // x coordinate is incremented
         };
     };
     /** If statement checks if the up arrow key was hit */
@@ -174,7 +174,7 @@ player.prototype.handleInput = function(keyStroke) {
          * the score, and sets the player encouragement message variable.
          */
         if (this.y > 83) {
-            this.y = this.y-83;             // y coordinate is decremented
+            this.y = this.y - 83;             // y coordinate is decremented
         } else {
             /** 
              * Function is called to reset the player back to the starting
@@ -192,7 +192,7 @@ player.prototype.handleInput = function(keyStroke) {
          * bottom of the game canvas.  If not, allows the player to move.
          */
         if (this.y + 83 < ctx.canvas.height - 200) {
-            this.y = this.y+83;             // y coordinate is incremented
+            this.y = this.y + 83;             // y coordinate is incremented
         };
     };
     /** If the space bar is hit, the sprite index is changed to the next one.
@@ -238,7 +238,7 @@ allEnemies[2].y = 229;
 /**
  * Initializes the player object by calling the player function.
  */
-var player = new player();
+var player = new Player();
 
 /**
  * The player sprite array is loaded into the memory by calling
@@ -350,7 +350,7 @@ function encouragement() {
      * If statement changes the color of the encouragement message depending 
      * if the water is reached or the player is hit by an enemy.
      */
-    if (playerSuccess === 'Good job!' {
+    if (playerSuccess === 'Good job!') {
         ctx.fillStyle = 'white';            // White if reached the water
     } else {
         ctx.fillStyle = 'red';              // Red if hit by an enemy
