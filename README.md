@@ -7,6 +7,7 @@ Hello, welcome to the Drewman Frogger Game!
 Starting the game is simple.  Just load the webpage.  The game can be found at the following link:
 http://drewman7.github.io/frontend-nanodegree-arcade-game/
 
+
 *** The Goal!
 The goal of the game is very simple.  Get to the water!  See?  It's that easy!
 
